@@ -5,16 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles.css" />
+
     <title>RANDOM DOGS</title>
   </head>
   <body>
-    <div class="main-container">
-      <h1>Random Dogs</h1>
+    <h1>Random Dogs</h1>
 
-      <button id="reload-button" type="button">Show Me A Dog!</button>
-      
-      <img id="dog-image" alt="random dog image" />
-      <script src="./main.js"></script>
-    </div>
+    <section class="main-container">
+      <button id="reload-button" type="button">Show Me More Dogs!</button>
+
+  <!----------------------random dogs--------------------------->
+      <article>
+        <img id="img1" class="dog-image" alt="random dog image" />
+        <button>save dog 🥺</button>
+      </article>
+
+      <article>
+        <img id="img2" class="dog-image" alt="random dog image" />
+        <button>save dog 🥺</button>
+      </article>
+
+      <article>
+        <img id="img3" class="dog-image" alt="random dog image" />
+        <button>save dog 🥺</button>
+      </article>
+    </section>
+
+    <!-----------------favs------------------>
+
+    <section class="fav-dogs">
+      <h2>Favorite Dogs</h2>
+      <article>
+        <img id="img1" class="dog-image" alt="random dog image" />
+        <button>Remove from favorites</button>
+      </article>
+    </section>
+
+    <script src="./main.js"></script>
   </body>
 </html>
