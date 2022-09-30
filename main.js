@@ -1,69 +1,92 @@
-const URL = "https://api.thedogapi.com/v1/images/search?limit=3&api_key=live_nZ1zksIFTxAlJeMgGB6yMBmWgZfE7Rg6F20BOl8UKYKa5M21Mra8vYYREFuHy82e";
+const API_URL = "https://api.thedogapi.com/v1/images/search?limit=2&api_key=live_nZ1zksIFTxAlJeMgGB6yMBmWgZfE7Rg6F20BOl8UKYKa5M21Mra8vYYREFuHy82e";
+const FAV_API_URL = "https://api.thedogapi.com/v1/favourites?&api_key=live_nZ1zksIFTxAlJeMgGB6yMBmWgZfE7Rg6F20BOl8UKYKa5M21Mra8vYYREFuHy82e"
 
+
+
+
+
+
+
+
+// -------------------VARIABLES NECESARIAS----------------------
+const spanError = document.getElementById("error")
 const button = document.getElementById("reload-button")
 
 
 
-document.addEventListener("DOMContentLoaded", loadRandomDogs)
+// ----------------FUNCIÓN PARA CARGAR IMAGENES RANDOM DE PERRITOS--------------
+
+
 
 async function loadRandomDogs() {
-    const resp = await fetch(URL);
-    const data = await resp.json();
+    const rest = await fetch(API_URL);
+    const data = await rest.json();
     console.log(data)
-    const img1 = document.getElementById("img1")
-    const img2 = document.getElementById("img2")
-    const img3 = document.getElementById("img3")
-    img1.src = data[0].url;
-    img2.src = data[1].url;
-    img3.src = data[2].url
+
+    if (rest.status != 200) {
+        spanError.innerHTML = "Hubo un error: " + resp.status + data.message;
+    } else {
+        const img1 = document.getElementById("img1")
+        const img2 = document.getElementById("img2")
+        img1.src = data[0].url;
+        img2.src = data[1].url;
+    }
+
 }
-
-
-
 button.onclick = loadRandomDogs
+loadRandomDogs()
 
 
 
+// ----------- FUNCIÓN PARA CARGAR LOS PERRITOS GUARDADOS -------------
+
+async function loadFavoriteDogs() {
+    const rest = await fetch(FAV_API_URL);
+    const data = await rest.json();
+
+    console.log("favorites")
+    console.log(data)
+    if (rest.status != 200) {
+        spanError.innerHTML = "Hubo un error: " + rest.status;
+    } else {
+        data.forEach(dog =>{
+            const section=document.getElementById("fav-dogs")
+            const article= document.createElement("article");
+            const img= document.createElement("img");
+            const btn= document.createElement("button");
+            const btnText= document.createTextNode("Remove from favorites")
+
+            btn.appendChild(btnText);
+            article.appendChild(img);
+            article.appendChild(btn)
+            section.appendChild(article)
+            
+            // dog.image.url
+        });
+    }
+}
+loadFavoriteDogs()
 
 
 
+// ----------FUNCIÓN PARA GUARDAR LOS PERRITOS A FAVORITOS---------------
 
+async function saveFavoriteCats() {
+    const rest = await fetch(FAV_API_URL,
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                image_id : "Nk8cSr_aj"
+            })
+        });
+        const data= await rest.json();
+        console.log("here")
+        console.log(rest)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// fetch(URL)
-//     .then(res => res.json())
-//     .then(data => {
-//         const img= document.querySelector("dog-image")
-//         img.src= data[0].url
-//         data[0].url
-//     })
-
-// const button = document.querySelector("reload-button");
-// button.addEventListener("click", me)
-
-
-// function me (){
-//     console.log("hola")
-// }
+        if (rest.status != 200) {
+            spanError.innerHTML = "Hubo un error: " + rest.status + data;
+        }
+}

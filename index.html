@@ -9,31 +9,31 @@
     <title>RANDOM DOGS</title>
   </head>
   <body>
+
+
     <h1>Random Dogs</h1>
+    <span id="error"></span>
 
     <section class="main-container">
       <button id="reload-button" type="button">Show Me More Dogs!</button>
 
   <!----------------------random dogs--------------------------->
-      <article>
+      <article id="randomDogs">
         <img id="img1" class="dog-image" alt="random dog image" />
-        <button>save dog 🥺</button>
+        <button onclick="loadFavoriteDogs()">save dog 🥺</button>
       </article>
 
       <article>
         <img id="img2" class="dog-image" alt="random dog image" />
-        <button>save dog 🥺</button>
+        <button onclick="loadFavoriteDogs()">save dog 🥺</button>
       </article>
 
-      <article>
-        <img id="img3" class="dog-image" alt="random dog image" />
-        <button>save dog 🥺</button>
-      </article>
+   
     </section>
 
     <!-----------------favs------------------>
 
-    <section class="fav-dogs">
+    <section id="fav-dogs">
       <h2>Favorite Dogs</h2>
       <article>
         <img id="img1" class="dog-image" alt="random dog image" />
