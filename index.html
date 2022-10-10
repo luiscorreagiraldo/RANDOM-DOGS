@@ -12,20 +12,19 @@
 
 
     <h1>Random Dogs</h1>
-    <span id="error"></span>
 
     <section class="main-container">
       <button id="reload-button" type="button">Show Me More Dogs!</button>
 
-  <!----------------------random dogs--------------------------->
+      <!----------------------random dogs--------------------------->
       <article id="randomDogs">
         <img id="img1" class="dog-image" alt="random dog image" />
-        <button onclick="saveFavoriteDogs()">save dog 🥺</button>
+        <button id="btn1" >save dog 🥺</button>
       </article>
 
       <article>
         <img id="img2" class="dog-image" alt="random dog image" />
-        <button onclick="saveFavoriteDogs()">save dog 🥺</button>
+        <button id="btn2" >save dog 🥺</button>
       </article>
 
    
@@ -34,12 +33,22 @@
     <!-----------------favs------------------>
 
     <section id="fav-dogs">
-      <h2>Favorite Dogs</h2>
-      <article>
-        <img id="img1" class="dog-image" alt="random dog image" />
-        <button>Remove from favorites</button>
-      </article>
+      
     </section>
+
+
+    <!------------------Upload------------------>
+
+    <section id="uploadingDog">
+      <h2>
+        Sube la foto de tu perrito
+        <form id="uploadingForm">
+          <input id="file" type="file" name="file"/>
+          <button type="button" onclick="uploadDogPhoto()">SUBIR</button>
+        </form>
+      </h2>
+    </section>
+
 
     <script src="./main.js"></script>
   </body>
