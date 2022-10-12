@@ -15,14 +15,25 @@ body {
 .main-container {
   display: flex;
   align-items: center;
-  width: 400px;
+  justify-content: center;
+  width: 780px;
   min-height: 500px;
   margin: auto;
-  flex-direction: column;
+  flex-direction: row;
   border: none;
   border-radius: 15px;
   background-color: #cdd3ce3e;
 }
+
+.column {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 h1 {
   font-size: 40px;
   color: black;
@@ -32,6 +43,7 @@ h1 {
   margin-bottom: 20px;
   width: 70%;
   text-align: center;
+  display: block;
 }
 
 #reload-button {
@@ -44,12 +56,25 @@ h1 {
   font-size: medium;
   font-weight: bold;
   color: white;
+  width: 30%;
   margin-bottom: 25px;
+  margin: auto;
 }
 .dog-image {
-  width: 300px;
+  width: 350px;
   height: 350px;
   object-fit: cover;
   border-radius: 15px;
-  margin: 5px;
+  margin: auto;
+}
+
+
+.save-dog-button{
+ border: none;
+ background-color:orange;
+ color:white;
+ padding: 9px 15px;
+ font-size: 15px;
+ font-weight: bold;
+ border-radius: 0 0 8px 8px;
 }

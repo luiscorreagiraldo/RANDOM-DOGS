@@ -65,19 +65,21 @@ async function loadFavoriteDogs() {
 
 
         data.forEach(dog => {
-            const article = document.createElement("article");
+            const div = document.createElement("div");
             const img = document.createElement("img");
             const btn = document.createElement("button");
             const btnText = document.createTextNode("Remove from favorites")
+            
 
 
             btn.appendChild(btnText);
             img.src = dog.image.url;
             img.width = 300;
             btn.onclick = () => deleteFavoriteDog(dog.id)
-            article.appendChild(img);
-            article.appendChild(btn)
-            section.appendChild(article)
+            div.appendChild(img);
+            div.appendChild(btn)
+            section.appendChild(div)
+            div.classList.add("column")
         });
     }
 }
