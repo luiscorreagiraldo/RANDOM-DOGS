@@ -46,13 +46,17 @@ h1 {
   display: block;
 }
 
+#random-dogs{
+  margin-bottom: 100px;
+}
+
 #reload-button {
   display: block;
   padding: 10px;
   cursor: pointer;
   border: none;
   background-color: orangered;
-  border-radius: 10px;
+  border-radius: 10px 10px 0px 0px;
   font-size: medium;
   font-weight: bold;
   color: white;
@@ -68,13 +72,64 @@ h1 {
   margin: auto;
 }
 
+.save-dog-button {
+  border: none;
+  background-color: orange;
+  color: white;
+  padding: 9px 15px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 0 0 8px 8px;
+}
 
-.save-dog-button{
- border: none;
- background-color:orange;
- color:white;
- padding: 9px 15px;
- font-size: 15px;
- font-weight: bold;
- border-radius: 0 0 8px 8px;
+.save-dog-button:hover {
+  padding: 9px 20px;
+  transition: 0.5s;
+}
+
+.save-dog-button:focus {
+  color: black;
+}
+
+
+
+#fav-dogs{
+  /* margin-top: 100px; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 400px);
+  gap: 40px;
+  place-content: center;
+  margin-top: 30px;
+}
+
+.fav-dog-card{
+  width: 380px;
+  margin:10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
+
+.fav-dog-img{
+  width: 100%;
+  border-radius: 15px;
+  height: 400px;
+  object-fit:cover
+}
+
+
+.rm-btn{
+  background-color: orangered;
+  border:none;
+  color: white;
+  padding: 10px;
+  width: auto;
+  margin: auto;
+  padding: 9px 15px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 0 0 8px 8px;
+
+  
 }

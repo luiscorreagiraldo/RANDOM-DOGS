@@ -79,7 +79,10 @@ async function loadFavoriteDogs() {
             div.appendChild(img);
             div.appendChild(btn)
             section.appendChild(div)
-            div.classList.add("column")
+            div.classList.add("fav-dog-card")
+            img.classList.add("fav-dog-img")
+            btn.classList.add("rm-btn")
+            
         });
     }
 }
