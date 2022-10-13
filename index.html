@@ -9,50 +9,59 @@
     <title>RANDOM DOGS</title>
   </head>
   <body>
-    <h1>Random Dogs</h1>
+    <div id="an"></div>
 
+    <nav>
+      <div class="nav-links" id="navLinks">
+
+        <ul>
+          <li><a href="#an">RANDOM DOGGIES</a></li>
+          <li><a href="#fav-dogs-main-container">FAVORITES LIST</a></li>
+          <li><a href="#uploadingDog">UPLOAD A DOGGIE</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <h1 id="ran">Random Dogs</h1>
+
+    <!----------------------random dogs--------------------------->
 
     <section id="random-dogs">
-      <!----------------------random dogs--------------------------->
-
       <button id="reload-button" type="button">Show Me More Dogs!</button>
 
       <div class="main-container">
         <article class="column">
           <img id="img1" class="dog-image" alt="random dog image" />
-          <button id="btn1" class="save-dog-button">save dog ❤️</button>
+          <button id="btn1" class="save-dog-button">Save ❤️</button>
         </article>
 
         <article class="column">
           <img id="img2" class="dog-image" alt="random dog image" />
-          <button id="btn2" class="save-dog-button" >save dog ❤️</button>
+          <button id="btn2" class="save-dog-button">Save ❤️</button>
         </article>
       </div>
     </section>
 
-
-
-
-
-
     <!-----------------favs------------------>
     <section id="fav-dogs-main-container">
       <h2>YOUR FAVORITES</h2>
-      <section id="fav-dogs">
-      </section>
+      <section id="fav-dogs"></section>
     </section>
-  
 
     <!------------------Upload------------------>
 
     <section id="uploadingDog">
-      <h2>
-        Sube la foto de tu perrito
-        <form id="uploadingForm">
-          <input id="file" type="file" name="file" />
-          <button type="button" onclick="uploadDogPhoto()">SUBIR</button>
-        </form>
-      </h2>
+      <h2>UPLOAD YOUR DOG!</h2>
+      <p>❤️🐶❤️</p>
+
+      <form id="uploadingForm">
+        <input id="file" type="file" name="file" />
+
+        <button id="upload-btn" type="button" onclick="uploadDogPhoto()">
+          UPLOAD!
+        </button>
+        <p>it may take a few seconds</p>
+      </form>
     </section>
 
     <script src="./main.js"></script>

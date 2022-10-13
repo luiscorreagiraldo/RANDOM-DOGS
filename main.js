@@ -165,4 +165,6 @@ async function uploadDogPhoto() {
         console.log(data.url);
         saveFavoriteDog(data.id)
     }
+loadFavoriteDogs()
+loadRandomDogs()
 }
