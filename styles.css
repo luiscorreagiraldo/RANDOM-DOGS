@@ -6,6 +6,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -93,8 +94,16 @@ h1 {
 
 
 
+h2{
+  color: black;
+  display: block;
+  width: 100%;
+  font-size: 30px;
+  margin:auto;
+  text-align: center;
+}
+
 #fav-dogs{
-  /* margin-top: 100px; */
   display: grid;
   grid-template-columns: repeat(auto-fill, 400px);
   gap: 40px;

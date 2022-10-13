@@ -58,13 +58,10 @@ async function loadFavoriteDogs() {
     } else {
         const section = document.getElementById("fav-dogs")
         section.innerHTML = ""
-        const h2 = document.createElement("h2")
-        const h2Text = document.createTextNode("Random Dogs")
-        h2.appendChild(h2Text)
-
 
 
         data.forEach(dog => {
+        
             const div = document.createElement("div");
             const img = document.createElement("img");
             const btn = document.createElement("button");
@@ -74,7 +71,6 @@ async function loadFavoriteDogs() {
 
             btn.appendChild(btnText);
             img.src = dog.image.url;
-            img.width = 300;
             btn.onclick = () => deleteFavoriteDog(dog.id)
             div.appendChild(img);
             div.appendChild(btn)
