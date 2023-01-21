@@ -63,7 +63,8 @@ async function loadFavoriteDogs() {
       div.appendChild(img);
       div.appendChild(btn);
       section.appendChild(div);
-      div.classList.add("fav-dog-card");
+      div.classList.add("col");
+      div.classList.add("dog-col");
       img.classList.add("fav-dog-img");
       btn.classList.add("rm-btn");
       hidePreloader();

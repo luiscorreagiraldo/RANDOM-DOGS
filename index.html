@@ -5,23 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
 
     <title>RANDOM DOGS</title>
   </head>
   <body>
-    <div id="an"></div>
-
-    <nav>
+    <div id="ran"></div>
+    <nav id="navbar">
       <div class="nav-links" id="navLinks">
         <ul>
-          <li><a href="#an">RANDOM DOGGIES</a></li>
+          <li><a href="#ran">RANDOM DOGGIES</a></li>
           <li><a href="#fav-dogs-main-container">FAVORITES LIST</a></li>
           <li><a href="#uploadingDog">UPLOAD A DOGGIE</a></li>
         </ul>
       </div>
     </nav>
 
-    <h1 id="ran">Random Dogs</h1>
+    <h1 id="ran" class="title">Random Dogs</h1>
     <div class="preload" style="display: none">
       <img src="./preloader.gif" alt="" srcset="" />
     </div>
@@ -31,16 +36,22 @@
     <section id="random-dogs">
       <button id="reload-button" type="button">Show Me More Dogs!</button>
 
-      <div class="main-container">
-        <article class="column">
-          <img id="img1" class="dog-image" alt="random dog image" />
-          <button id="btn1" class="save-dog-button">Save ❤️</button>
-        </article>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <img id="img1" class="dog-image" alt="random dog image" />
+            <button id="btn1" class="save-dog-button" style="display: block">
+              Save ❤️
+            </button>
+          </div>
 
-        <article class="column">
-          <img id="img2" class="dog-image" alt="random dog image" />
-          <button id="btn2" class="save-dog-button">Save ❤️</button>
-        </article>
+          <div class="col">
+            <img id="img2" class="dog-image" alt="random dog image" />
+            <button id="btn2" class="save-dog-button" style="display: block">
+              Save ❤️
+            </button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -65,7 +76,11 @@
         <p>it may take a few seconds</p>
       </form>
     </section>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
     <script src="./main.js"></script>
   </body>
 </html>
