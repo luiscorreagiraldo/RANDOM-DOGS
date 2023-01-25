@@ -1,0 +1,292 @@
+$color-primario:#04091e;
+$color-secundario:#ff4500;
+$color-terciario:#ffa500;
+
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+#navbar {
+    z-index: 1001;
+    display: flex;
+    position: fixed;
+    top: 0;
+    height: 90px;
+    width: 100%;
+    padding: 1.5% 6%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: #04091e;
+}
+
+#navbar #navLinks {
+    flex: 1;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#navbar #navLinks ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+}
+
+#navbar #navLinks ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 20px;
+    margin-bottom: 0;
+}
+
+#navbar #navLinks ul li a:hover {
+    font-size: 18px;
+    transition: 1s ease-in-out;
+}
+
+#navbar #navLinks ul li::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: #ff4500;
+    display: block;
+    margin: auto;
+    transition: 0.5s ease-in-out;
+}
+
+#navbar #navLinks ul li:hover::after {
+    width: 100%;
+}
+
+h1{
+    width: 40%;
+    margin: 0 auto;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.preload {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1001;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.preload img {
+    width: 350px;
+}
+
+#rand {
+    position: relative;
+    top:0;
+    width: 5px;
+    height: 5px;
+}
+
+#random-dogs #show-more-btn {
+    width: 30%;
+    display: block;
+    padding: 10px;
+    border: none;
+    border-radius: 10px 10px 0px 0px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #ff4500;
+    color: #fff;
+    margin: 0 auto;
+}
+
+#random-dogs #show-more-btn:hover {
+    width: 25%;
+    transition: 1s ease-in-out;
+    font-size: 19px;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.col .dog-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    border-radius: 25px;
+    margin: 0 auto;
+}
+
+.col .save-dog-button {
+    border: none;
+    border-radius: 0 0 8px 8px;
+    margin: 0 auto;
+    padding: 9px 15px;
+    width: 20%;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: orange;
+    color: white;
+    margin-bottom: 100px;
+}
+
+.col .save-dog-button:hover {
+    padding: 9px 25px;
+    width: 23%;
+    transition: 0.5s;
+    font-size: 17px;
+    background-color: $color-primario;
+}
+
+h2 {
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+    color: black;
+    margin-bottom: 40px;
+}
+
+.container {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.container #fav-dogs {
+    width: 100%;
+
+    img {
+        width: 350px;
+        height: 350px;
+        object-fit: cover;
+        aspect-ratio: 1/1;
+        margin: 0 auto;
+        border-radius: 25px;
+
+        &:hover {
+            transform: scale(1.05);
+            transition: 1s ease-in-out
+        }
+    }
+}
+
+.rm-btn {
+    border: none;
+    margin: 0 auto;
+    width: 200px;
+    height: 30px;
+    border-radius: 0px 0px 8px 8px;
+    background-color: $color-terciario;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+
+    &:hover {
+        width: 160px;
+        transition: 0.5s ease-in-out;
+        color: black;
+    }
+}
+
+// UPLOAD YOUR DOG STARTS
+#uploadingDog {
+    margin-top: 90px;
+    margin-bottom: 30px;
+
+    h2 {
+        font-size: 30px;
+        margin: 0 auto
+    }
+
+    p {
+        margin: 0 auto;
+        text-align: center;
+        font-size: 19px;
+    }
+
+    #uploadingForm {
+        margin: 0 auto;
+        width: 50%;
+        height: 100px;
+        border-radius: 15px;
+        background-color: rgb(209, 208, 208);
+        
+    }
+
+    #file {
+        margin: 0 auto;
+        display: block;
+    }
+
+    #upload-btn {
+        margin: 0 auto;
+        display: block;
+        border-radius: 0px 0px 8px 8px;
+        margin: 0 auto;
+        width: 200px;
+        height: 30px;
+        border: none;
+        font-size: 17px;
+        font-weight: bold;
+        background-color: $color-terciario;
+        color: white;
+
+        &:hover {
+            width: 180px;
+            transition: 0.5s ease-in-out;
+            font-size: 18px;
+        }
+
+    }
+}
+
+// UPLOAD YOUR DOG ENDS
+
+
+@media (max-width: 700px) {
+    #navbar {
+        height: auto;
+    }
+
+    #navbar #navLinks ul {
+        display: block;
+        margin: 0;
+        padding: 0;
+        height: auto;
+    }
+
+    #navbar #navLinks ul li {
+        width: 100%;
+        margin: 0;
+        height: auto;
+        padding: 0;
+    }
+
+    #navbar #navLinks ul li:hover::after {
+        width: 30%;
+    }
+
+    #navbar #navLinks ul li a {
+        display: block;
+        margin: 0;
+        height: auto;
+        padding: 0;
+    }
+}

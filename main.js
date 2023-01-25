@@ -7,10 +7,19 @@ const DELETE_FAV_API_URL = (id) =>
 const UPLOAD_YOUR_DOG_API = "https://api.thedogapi.com/v1/images/upload/";
 
 // -------------------VARIABLES NECESARIAS----------------------
-const spanError = document.getElementById("error");
-const button = document.getElementById("reload-button");
+const button = document.getElementById("show-more-btn");
 const preload = document.querySelector(".preload");
+// ----------FUNCIÓN PARA MOSTRAR EL PRELOADER---------------
 
+function showPreloader() {
+  preload.style.display = "flex";
+}
+
+// ----------FUNCIÓN PARA OCULTAR EL PRELOADER---------------
+
+function hidePreloader() {
+  preload.style.display = "none";
+}
 // ----------------FUNCIÓN PARA CARGAR IMAGENES RANDOM DE PERRITOS--------------
 
 async function loadRandomDogs() {
@@ -55,7 +64,7 @@ async function loadFavoriteDogs() {
       const div = document.createElement("div");
       const img = document.createElement("img");
       const btn = document.createElement("button");
-      const btnText = document.createTextNode("Remove from favorites");
+      const btnText = document.createTextNode("Remove");
 
       btn.appendChild(btnText);
       img.src = dog.image.url;
@@ -73,17 +82,7 @@ async function loadFavoriteDogs() {
 }
 loadFavoriteDogs();
 
-// ----------FUNCIÓN PARA MOSTRAR EL PRELOADER---------------
 
-function showPreloader() {
-  preload.style.display = "flex";
-}
-
-// ----------FUNCIÓN PARA MOSTRAR EL PRELOADER---------------
-
-function hidePreloader() {
-  preload.style.display = "none";
-}
 
 // ----------FUNCIÓN PARA GUARDAR LOS PERRITOS A FAVORITOS---------------
 
@@ -126,6 +125,7 @@ showPreloader()
     console.log("Perrito eliminado de favoritos");
     loadFavoriteDogs();
   }
+  hidePreloader()
 }
 
 // -------------FUNCIÓN PARA SUBIR IMAGEN DE PERRITO----------

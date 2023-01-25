@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
+  padding: 0;
+  margin: 0;
 }
 
 html {
@@ -9,260 +9,261 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: Lato, sans-serif;
-}
-
-/* -----------nav bar------------ */
-
-nav {
+#navbar {
+  z-index: 1001;
   display: flex;
-  padding: 2% 6%;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(4, 9, 30);
-  position: sticky;
+  position: fixed;
   top: 0;
   height: 90px;
   width: 100%;
+  padding: 1.5% 6%;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: #04091e;
 }
 
-.nav-links {
+#navbar #navLinks {
   flex: 1;
   text-align: center;
   margin: 0 auto;
 }
-.nav-links ul li {
+
+#navbar #navLinks ul li {
   list-style: none;
   display: inline-block;
   padding: 8px 12px;
-  /* position: relative; */
 }
-.nav-links ul li a {
+
+#navbar #navLinks ul li a {
   color: white;
   text-decoration: none;
   font-size: 17px;
   margin: 20px;
+  margin-bottom: 0;
 }
 
-.nav-links ul li::after {
+#navbar #navLinks ul li a:hover {
+  font-size: 18px;
+  transition: 1s ease-in-out;
+}
+
+#navbar #navLinks ul li::after {
   content: "";
   width: 0%;
   height: 2px;
-  background-color: orangered;
+  background-color: #ff4500;
   display: block;
   margin: auto;
-  transition: 0.5s;
+  transition: 0.5s ease-in-out;
 }
-.nav-links ul li:hover::after {
+
+#navbar #navLinks ul li:hover::after {
   width: 100%;
 }
 
-/* -----------------main---------------- */
+h1 {
+  width: 40%;
+  margin: 0 auto;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+}
 
-/* -----------------preload---------------- */
 .preload {
   display: flex;
-  font-weight: bold;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #fff;
   width: 100vw;
   height: 100vh;
-  z-index: 1100;
+  z-index: 1001;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
 }
 
 .preload img {
   width: 350px;
-  justify-content: center;
-  align-items: center;
 }
 
-/* -----------------preload ends---------------- */
+#rand {
+  position: relative;
+  top: 0;
+  width: 5px;
+  height: 5px;
+}
 
-/* .main-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 780px;
-  min-height: 500px;
-  margin: auto;
-  flex-direction: row;
+#random-dogs #show-more-btn {
+  width: 30%;
+  display: block;
+  padding: 10px;
   border: none;
-  border-radius: 15px;
-  background-color: #cdd3ce3e;
-} */
+  border-radius: 10px 10px 0px 0px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: #ff4500;
+  color: #fff;
+  margin: 0 auto;
+}
+
+#random-dogs #show-more-btn:hover {
+  width: 25%;
+  transition: 1s ease-in-out;
+  font-size: 19px;
+}
 
 .col {
-  width: 50%;
-  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-.title {
-  margin: auto;
-  margin-top: 60px;
-  margin-bottom: 20px;
-  text-align: center;
-  display: block;
-  width: 70%;
-  font-size: 40px;
-  color: black;
-  font-family: Lato, sans-serif;
+.col .dog-image {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  border-radius: 25px;
+  margin: 0 auto;
+}
+
+.col .save-dog-button {
+  border: none;
+  border-radius: 0 0 8px 8px;
+  margin: 0 auto;
+  padding: 9px 15px;
+  width: 20%;
+  font-size: 16px;
   font-weight: bold;
-}
-
-#random-dogs {
+  background-color: orange;
+  color: white;
   margin-bottom: 100px;
 }
 
-#reload-button {
-  display: block;
-  padding: 10px;
-  cursor: pointer;
-  border: none;
-  background-color: orangered;
-  border-radius: 10px 10px 0px 0px;
-  font-size: medium;
-  font-weight: bold;
-  color: white;
-  width: 30%;
-  margin-bottom: 25px;
-  margin: auto;
-}
-#reload-button:hover {
-  width: 28%;
+.col .save-dog-button:hover {
+  padding: 9px 25px;
+  width: 23%;
   transition: 0.5s;
-}
-
-.dog-image {
-  width: 350px;
-  height: 350px;
-  object-fit: cover;
-  border-radius: 15px;
-  margin: 0 auto ;
-}
-
-.save-dog-button {
-  border: none;
-  background-color: orange;
-  color: white;
-  padding: 9px 15px;
-  font-size: 15px;
-  font-weight: bold;
-  border-radius: 0 0 8px 8px;
-}
-
-.save-dog-button:hover {
-  padding: 9px 20px;
-  transition: 0.5s;
-}
-
-.save-dog-button:focus {
-  color: black;
+  font-size: 17px;
+  background-color: #04091e;
 }
 
 h2 {
-  color: black;
-  display: block;
-  width: 100%;
-  font-size: 30px;
-  margin: auto;
+  width: 30%;
+  margin: 0 auto;
   text-align: center;
+  color: black;
+  margin-bottom: 40px;
 }
 
-#fav-dogs {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 400px);
-  gap: 40px;
-  place-content: center;  
-  margin-top: 30px;
-}
-
-.dog-col {
-  width: 380px;
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
-}
-
-.fav-dog-img {
+.container {
   width: 100%;
-  border-radius: 15px;
-  height: 400px;
+  margin-top: 40px;
+}
+
+.container #fav-dogs {
+  width: 100%;
+}
+.container #fav-dogs img {
+  width: 350px;
+  height: 350px;
   object-fit: cover;
+  aspect-ratio: 1/1;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+.container #fav-dogs img:hover {
+  transform: scale(1.05);
+  transition: 1s ease-in-out;
 }
 
 .rm-btn {
-  background-color: orangered;
   border: none;
+  margin: 0 auto;
+  width: 200px;
+  height: 30px;
+  border-radius: 0px 0px 8px 8px;
+  background-color: #ffa500;
   color: white;
-  padding: 10px;
-  width: auto;
-  margin: auto;
-  padding: 9px 15px;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: bold;
-  transition: 1s;
-  border-radius: 0 0 8px 8px;
 }
-
 .rm-btn:hover {
-  width: 250px;
+  width: 160px;
+  transition: 0.5s ease-in-out;
+  color: black;
 }
 
 #uploadingDog {
-  margin-top: 20px;
-  padding-top: 120px;
+  margin-top: 90px;
+  margin-bottom: 30px;
 }
-
-#uploadingForm {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+#uploadingDog h2 {
+  font-size: 30px;
+  margin: 0 auto;
 }
-
-p {
+#uploadingDog p {
+  margin: 0 auto;
   text-align: center;
-  font-size: 35px;
+  font-size: 19px;
 }
-
-#uploadingForm input {
-  padding: 100px;
-  border: none;
+#uploadingDog #uploadingForm {
+  margin: 0 auto;
+  width: 50%;
+  height: 100px;
+  border-radius: 15px;
+  background-color: rgb(209, 208, 208);
 }
-
-#upload-btn {
-  padding: 20px;
+#uploadingDog #file {
+  margin: 0 auto;
+  display: block;
+}
+#uploadingDog #upload-btn {
+  margin: 0 auto;
+  display: block;
+  border-radius: 0px 0px 8px 8px;
+  margin: 0 auto;
+  width: 200px;
+  height: 30px;
   border: none;
-  background-color: orange;
-  color: white;
+  font-size: 17px;
   font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 0 10px 10px;
-  width: 170px;
+  background-color: #ffa500;
+  color: white;
 }
-#upload-btn:hover {
-  color: black;
-  transition: 0.5s;
-  width: 185px;
+#uploadingDog #upload-btn:hover {
+  width: 180px;
+  transition: 0.5s ease-in-out;
+  font-size: 18px;
 }
 
-#uploadingForm input {
-  padding: 100px;
-  background-color: rgb(236, 236, 236);
+@media (max-width: 700px) {
+  #navbar {
+    height: auto;
+  }
+  #navbar #navLinks ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: auto;
+  }
+  #navbar #navLinks ul li {
+    width: 100%;
+    margin: 0;
+    height: auto;
+    padding: 0;
+  }
+  #navbar #navLinks ul li:hover::after {
+    width: 30%;
+  }
+  #navbar #navLinks ul li a {
+    display: block;
+    margin: 0;
+    height: auto;
+    padding: 0;
+  }
 }
-form p {
-  font-size: 20px;
-  margin-bottom: 50px;
-}
+
+/*# sourceMappingURL=styles.css.map */
