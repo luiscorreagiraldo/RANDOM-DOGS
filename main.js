@@ -9,6 +9,8 @@ const UPLOAD_YOUR_DOG_API = "https://api.thedogapi.com/v1/images/upload/";
 // -------------------VARIABLES NECESARIAS----------------------
 const button = document.getElementById("show-more-btn");
 const preload = document.querySelector(".preload");
+const er= document.querySelector("#er")
+
 // ----------FUNCIÓN PARA MOSTRAR EL PRELOADER---------------
 
 function showPreloader() {
@@ -82,8 +84,6 @@ async function loadFavoriteDogs() {
 }
 loadFavoriteDogs();
 
-
-
 // ----------FUNCIÓN PARA GUARDAR LOS PERRITOS A FAVORITOS---------------
 
 async function saveFavoriteDog(id) {
@@ -113,7 +113,7 @@ async function saveFavoriteDog(id) {
 //------------------FUNCIÓN PARA ELIMINAR PERRITOS DE FAVORITOS----------
 
 async function deleteFavoriteDog(id) {
-showPreloader()
+  showPreloader();
   const rest = await fetch(DELETE_FAV_API_URL(id), {
     method: "DELETE",
   });
@@ -125,7 +125,7 @@ showPreloader()
     console.log("Perrito eliminado de favoritos");
     loadFavoriteDogs();
   }
-  hidePreloader()
+  hidePreloader();
 }
 
 // -------------FUNCIÓN PARA SUBIR IMAGEN DE PERRITO----------
@@ -135,25 +135,27 @@ async function uploadDogPhoto() {
   const formData = new FormData(form);
   console.log(formData.get("file"));
 
-  const rest = await fetch(UPLOAD_YOUR_DOG_API, {
-    method: "POST",
-    headers: {
-      "X-API-KEY":
-        "live_nZ1zksIFTxAlJeMgGB6yMBmWgZfE7Rg6F20BOl8UKYKa5M21Mra8vYYREFuHy82e",
-    },
-    body: formData,
-  });
 
-  const data = await rest.json();
-
-  if (rest.status !== 201) {
-    console.log("hubo un error");
-  } else {
-    console.log("Foto de perrito cargada :)");
+ 
+  try {
+    const rest = await fetch(UPLOAD_YOUR_DOG_API, {
+      method: "POST",
+      headers: {
+        "X-API-KEY":
+          "live_nZ1zksIFTxAlJeMgGB6yMBmWgZfE7Rg6F20BOl8UKYKa5M21Mra8vYYREFuHy82e",
+      },
+      body: formData,
+    });
+  
+    const data = await rest.json();
     console.log({ data });
     console.log(data.url);
     saveFavoriteDog(data.id);
+  } catch (error){
+    console.log("hola")
+    er.innerHTML="it is not a doggie image! 🐶";
   }
+
   loadFavoriteDogs();
   loadRandomDogs();
 }
